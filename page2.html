@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Gift for You 🌸</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body class="page2-body">
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="wrapper">
+        <main class="card page2-card">
+            
+            <div class="flower-hero-container">
+                <div class="glow-effect"></div>
+                <img src="flower.jpg" alt="Flower" class="flower-png-large">
+            </div>
+
+            <div class="aesthetic-message">
+                <p>I've always wanted to give this kind of flower sa'yo. Not a boquete pero isang flower na special at beatiful, just like you are. Pero wala e, ang layo natin sa isa't isa. Sayang diba, isang special day for someone you love, bat di mo man lang siya mabigyan ng physical na material that indactes na gaano mo siya ka mahal. So instead gumawa ako nito upang maramdaman mo kung gaano kita ka mahal. Hindi mo man ito nahahawakan, but know that ang isang flower na iyan, ay gawa ng pagmamahal ko sa'yo. </p>
+            </div>
+
+            <div class="nav-section">
+                <a href="page3.html" class="icon-btn-fancy" onclick="playMusic()">
+                    <span class="icon">📩</span>
+                    <div class="btn-ring"></div>
+                </a>
+                <p class="tap-text-hint">Tap to read my letter</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(() => {
+                console.log("Waiting for interaction...");
+            });
+        });
+
+        function playMusic() {
+            document.getElementById('bgMusic').play();
+        }
+    </script>
+</body>
+</html>

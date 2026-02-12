@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Letter to You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body class="page3-body">
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="wrapper">
+        <main class="card letter-card">
+            <div class="stamp">❤️</div>
+            <h1 class="title">To My Baby Elle...</h1>
+            
+            <div class="typewriter-container">
+                <p id="typewriter-text"></p>
+                <span class="cursor">|</span>
+            </div>
+
+            <div id="final-thougth" class="hidden">
+                <p class="signature">Your baby,<br> Adrian</p>
+                <button class="small-btn" onclick="location.reload()">Read Again</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Start music if it was paused
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(() => {});
+        });
+
+        const text = "Baby, the first time na nakilala kita, hindi ko talaga 'yon makakalimutan, nasa mic grab ta'yo non, nag kakantahan at nag eenjoy. Pero 'di ko maintindihan, bigla nalang akong nagka interes sa'yo, I wanted to know you more, makipag-usap sa'yo. You we're very different kasi out of the girls I've met, napakamasayahin, at nag eenjoy lang, simpleng mga salita, tinatawanan mo na agad. Hanggang sa yon nga, naisipan natin mag trip trip lang, tinatawag mo akong 'baby' at 'yon din ako sa'yo. Pero di ko inaasahang umabot sa part na unti-unti akong nahulog sa'yo. Baby, I know that itong ginawa kong ito ay isang maliit na bagay lamang, pero know that ginawa ko ito with love. Naman kasi ih, hindi mo kasi ako pinayagan bigyan ka ng material na bagay, naisipan ko tuloy 'to. Happy Valentine's day, Baby, I love you so much, di ako magsasawang sabihin 'yan sa'yo. Nandito lang ako palagi para sa iyo,byy whether sa masasayang bagay, malulungkot or kung ano man 'yan. I love youuuu❤️";
+        
+        let index = 0;
+        const speed = 60; // Adjust typing speed here (lower = faster)
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            } else {
+                // Show signature after typing finishes
+                document.getElementById("final-thougth").classList.remove("hidden");
+                document.querySelector(".cursor").style.display = "none";
+            }
+        }
+
+        // Start typing after a short delay
+        setTimeout(typeWriter, 1000);
+    </script>
+</body>
+</html>
